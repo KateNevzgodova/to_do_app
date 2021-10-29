@@ -1,30 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Fcomponent from './Fcomponent';
-import Ccomponent from './Ccomponent';
-
-import {useState} from 'react';
+import { AppBar, Typography  } from '@mui/material';
+import Filters from './components/Filters';
 
 function App() {
-  const [name,setName] = useState('Niksa');
-  const [text,setText] = useState('');
 
-  const handleChangeText = (event) =>{
-  
-    setText(event.target.value);
-  }
 
   return (
     <div className="App">
-      <header className="App-header">
-      
-      <input type='text' value={text} onChange={handleChangeText} />
-        <button onClick={() => setName(text)}>Click</button>
+        <AppBar position="static">
+          <Typography align='center' variant='h4'> To do App</Typography>
+        </AppBar>
+        <Filters />
         
-        <Ccomponent name={name} />
-        
-        
-      </header>
     </div>
   );
 }
